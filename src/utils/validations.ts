@@ -11,9 +11,8 @@ export function isPhoneNumberValid(phoneNumber: PhoneInputState) {
 }
 
 export function isNameMoreThan2Characters(name: string) {
-  const nameContainsNumbers = /^[a-zA-Z\s]{2,}$/.test(name);
-  const nameLengthGreaterThanTwo = name.length >= 2 ? true : false;
-  return !nameContainsNumbers && nameLengthGreaterThanTwo;
+  const name2LengthNoNumbers = /^[a-zA-Z\s]{2,}$/.test(name);
+  return name2LengthNoNumbers;
 }
 
 export function isCityValid(city: string) {
