@@ -24,8 +24,10 @@ type ClassFormState = {
 };
 
 const errorMessages = {
-  firstNameErrorMessage: "First name must be at least 2 characters long",
-  lastNameErrorMessage: "Last name must be at least 2 characters long",
+  firstNameErrorMessage:
+    "First name must be at least 2 characters long with no numbers",
+  lastNameErrorMessage:
+    "Last name must be at least 2 characters long with no numbers",
   emailErrorMessage: "Email is Invalid",
   cityErrorMessage: "State is Invalid",
 };

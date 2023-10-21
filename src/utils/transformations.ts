@@ -1,4 +1,4 @@
-import { PhoneInputState } from "../FunctionalApp/FunctionalPhone";
+import { PhoneInputState } from "../types";
 
 export const capitalize = (capitalizeInput: string) => {
   let newWord = capitalizeInput.toLowerCase();

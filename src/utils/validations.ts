@@ -1,5 +1,5 @@
 import { allCities } from "./all-cities";
-import { PhoneInputState } from "../FunctionalApp/FunctionalPhone";
+import { PhoneInputState } from "../types";
 export function isEmailValid(emailAddress: string) {
   // eslint-disable-next-line no-useless-escape
   const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -11,12 +11,14 @@ export function isPhoneNumberValid(phoneNumber: PhoneInputState) {
 }
 
 export function isNameMoreThan2Characters(name: string) {
-  return name.length >= 2 ? true : false;
+  const nameContainsNumbers = /^[a-zA-Z\s]{2,}$/.test(name);
+  const nameLengthGreaterThanTwo = name.length >= 2 ? true : false;
+  return !nameContainsNumbers && nameLengthGreaterThanTwo;
 }
 
 export function isCityValid(city: string) {
   const cityCopy = city.toLowerCase();
   let copyOfCities = [...allCities];
-copyOfCities = copyOfCities.map((city) => city.toLowerCase())
+  copyOfCities = copyOfCities.map((city) => city.toLowerCase());
   return copyOfCities.includes(cityCopy) ? true : false;
 }
